@@ -40,7 +40,10 @@ export const Article = (props: IArticleProps) => {
                   <Translate contentKey="myBlogApp.article.title">Title</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="myBlogApp.article.content">Content</Translate>
+                  <Translate contentKey="myBlogApp.article.content2">Content 2</Translate>
+                </th>
+                <th>
+                  <Translate contentKey="myBlogApp.article.auther">Auther</Translate>
                 </th>
                 <th />
               </tr>
@@ -54,7 +57,8 @@ export const Article = (props: IArticleProps) => {
                     </Button>
                   </td>
                   <td>{article.title}</td>
-                  <td>{article.content}</td>
+                  <td>{article.content2}</td>
+                  <td>{article.auther}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${article.id}`} color="info" size="sm">

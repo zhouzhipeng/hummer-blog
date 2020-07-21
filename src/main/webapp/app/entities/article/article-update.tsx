@@ -82,10 +82,16 @@ export const ArticleUpdate = (props: IArticleUpdateProps) => {
                 <AvField id="article-title" type="text" name="title" />
               </AvGroup>
               <AvGroup>
-                <Label id="contentLabel" for="article-content">
-                  <Translate contentKey="myBlogApp.article.content">Content</Translate>
+                <Label id="content2Label" for="article-content2">
+                  <Translate contentKey="myBlogApp.article.content2">Content 2</Translate>
                 </Label>
-                <AvField id="article-content" type="text" name="content" />
+                <AvField id="article-content2" type="text" name="content2" />
+              </AvGroup>
+              <AvGroup>
+                <Label id="autherLabel" for="article-auther">
+                  <Translate contentKey="myBlogApp.article.auther">Auther</Translate>
+                </Label>
+                <AvField id="article-auther" type="text" name="auther" />
               </AvGroup>
               <Button tag={Link} id="cancel-save" to="/article" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />

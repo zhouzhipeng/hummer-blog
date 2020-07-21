@@ -19,7 +19,10 @@
             <column name="title" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="content" type="varchar(255)">
+            <column name="content_2" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="auther" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
@@ -46,7 +49,8 @@
                   tableName="article">
             <column name="id" type="numeric"/>
             <column name="title" type="string"/>
-            <column name="content" type="string"/>
+            <column name="content_2" type="string"/>
+            <column name="auther" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>
