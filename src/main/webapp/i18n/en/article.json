@@ -17,7 +17,8 @@
         "title": "Article"
       },
       "title": "Title",
-      "content": "Content"
+      "content2": "Content 2",
+      "auther": "Auther"
     }
   }
 }

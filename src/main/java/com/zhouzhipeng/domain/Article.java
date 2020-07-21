@@ -21,8 +21,11 @@ public class Article implements Serializable {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "content")
-    private String content;
+    @Column(name = "content_2")
+    private String content2;
+
+    @Column(name = "auther")
+    private String auther;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -46,17 +49,30 @@ public class Article implements Serializable {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public String getContent2() {
+        return content2;
     }
 
-    public Article content(String content) {
-        this.content = content;
+    public Article content2(String content2) {
+        this.content2 = content2;
         return this;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setContent2(String content2) {
+        this.content2 = content2;
+    }
+
+    public String getAuther() {
+        return auther;
+    }
+
+    public Article auther(String auther) {
+        this.auther = auther;
+        return this;
+    }
+
+    public void setAuther(String auther) {
+        this.auther = auther;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
@@ -82,7 +98,8 @@ public class Article implements Serializable {
         return "Article{" +
             "id=" + getId() +
             ", title='" + getTitle() + "'" +
-            ", content='" + getContent() + "'" +
+            ", content2='" + getContent2() + "'" +
+            ", auther='" + getAuther() + "'" +
             "}";
     }
 }

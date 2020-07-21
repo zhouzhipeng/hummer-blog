@@ -6,7 +6,11 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "content",
+      "fieldName": "content2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "auther",
       "fieldType": "String"
     }
   ],

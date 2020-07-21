@@ -32,11 +32,17 @@ export const ArticleDetail = (props: IArticleDetailProps) => {
           </dt>
           <dd>{articleEntity.title}</dd>
           <dt>
-            <span id="content">
-              <Translate contentKey="myBlogApp.article.content">Content</Translate>
+            <span id="content2">
+              <Translate contentKey="myBlogApp.article.content2">Content 2</Translate>
             </span>
           </dt>
-          <dd>{articleEntity.content}</dd>
+          <dd>{articleEntity.content2}</dd>
+          <dt>
+            <span id="auther">
+              <Translate contentKey="myBlogApp.article.auther">Auther</Translate>
+            </span>
+          </dt>
+          <dd>{articleEntity.auther}</dd>
         </dl>
         <Button tag={Link} to="/article" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

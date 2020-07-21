@@ -33,8 +33,11 @@ public class ArticleResourceIT {
     private static final String DEFAULT_TITLE = "AAAAAAAAAA";
     private static final String UPDATED_TITLE = "BBBBBBBBBB";
 
-    private static final String DEFAULT_CONTENT = "AAAAAAAAAA";
-    private static final String UPDATED_CONTENT = "BBBBBBBBBB";
+    private static final String DEFAULT_CONTENT_2 = "AAAAAAAAAA";
+    private static final String UPDATED_CONTENT_2 = "BBBBBBBBBB";
+
+    private static final String DEFAULT_AUTHER = "AAAAAAAAAA";
+    private static final String UPDATED_AUTHER = "BBBBBBBBBB";
 
     @Autowired
     private ArticleRepository articleRepository;
@@ -56,7 +59,8 @@ public class ArticleResourceIT {
     public static Article createEntity(EntityManager em) {
         Article article = new Article()
             .title(DEFAULT_TITLE)
-            .content(DEFAULT_CONTENT);
+            .content2(DEFAULT_CONTENT_2)
+            .auther(DEFAULT_AUTHER);
         return article;
     }
     /**
@@ -68,7 +72,8 @@ public class ArticleResourceIT {
     public static Article createUpdatedEntity(EntityManager em) {
         Article article = new Article()
             .title(UPDATED_TITLE)
-            .content(UPDATED_CONTENT);
+            .content2(UPDATED_CONTENT_2)
+            .auther(UPDATED_AUTHER);
         return article;
     }
 
@@ -92,7 +97,8 @@ public class ArticleResourceIT {
         assertThat(articleList).hasSize(databaseSizeBeforeCreate + 1);
         Article testArticle = articleList.get(articleList.size() - 1);
         assertThat(testArticle.getTitle()).isEqualTo(DEFAULT_TITLE);
-        assertThat(testArticle.getContent()).isEqualTo(DEFAULT_CONTENT);
+        assertThat(testArticle.getContent2()).isEqualTo(DEFAULT_CONTENT_2);
+        assertThat(testArticle.getAuther()).isEqualTo(DEFAULT_AUTHER);
     }
 
     @Test
@@ -127,7 +133,8 @@ public class ArticleResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(article.getId().intValue())))
             .andExpect(jsonPath("$.[*].title").value(hasItem(DEFAULT_TITLE)))
-            .andExpect(jsonPath("$.[*].content").value(hasItem(DEFAULT_CONTENT)));
+            .andExpect(jsonPath("$.[*].content2").value(hasItem(DEFAULT_CONTENT_2)))
+            .andExpect(jsonPath("$.[*].auther").value(hasItem(DEFAULT_AUTHER)));
     }
     
     @Test
@@ -142,7 +149,8 @@ public class ArticleResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(article.getId().intValue()))
             .andExpect(jsonPath("$.title").value(DEFAULT_TITLE))
-            .andExpect(jsonPath("$.content").value(DEFAULT_CONTENT));
+            .andExpect(jsonPath("$.content2").value(DEFAULT_CONTENT_2))
+            .andExpect(jsonPath("$.auther").value(DEFAULT_AUTHER));
     }
     @Test
     @Transactional
@@ -166,7 +174,8 @@ public class ArticleResourceIT {
         em.detach(updatedArticle);
         updatedArticle
             .title(UPDATED_TITLE)
-            .content(UPDATED_CONTENT);
+            .content2(UPDATED_CONTENT_2)
+            .auther(UPDATED_AUTHER);
 
         restArticleMockMvc.perform(put("/api/articles").with(csrf())
             .contentType(MediaType.APPLICATION_JSON)
@@ -178,7 +187,8 @@ public class ArticleResourceIT {
         assertThat(articleList).hasSize(databaseSizeBeforeUpdate);
         Article testArticle = articleList.get(articleList.size() - 1);
         assertThat(testArticle.getTitle()).isEqualTo(UPDATED_TITLE);
-        assertThat(testArticle.getContent()).isEqualTo(UPDATED_CONTENT);
+        assertThat(testArticle.getContent2()).isEqualTo(UPDATED_CONTENT_2);
+        assertThat(testArticle.getAuther()).isEqualTo(UPDATED_AUTHER);
     }
 
     @Test
