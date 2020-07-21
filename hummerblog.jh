@@ -1,6 +1,7 @@
 entity Article {
 	id String
 	title String
-    content String
+    content2 String
+    auther String
 }
 
